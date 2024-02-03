@@ -16,6 +16,11 @@ const UserList2 = () => {
             .catch(error => console.error(error));
     };
 
+    const fetchUsers1 = async () => {
+        const response = await axios.get(URL);
+        setUsers(response.data);
+    };
+
     return (
         <div style={{ textAlign: 'center'}}>
             <h1>Users List 2 Details Table</h1>
