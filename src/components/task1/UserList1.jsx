@@ -19,9 +19,9 @@ const UserList1 = () => {
     return (
         <div style={{ textAlign: 'center'}}>
             <h1>Users Details Table</h1>
-            <table>
+            <table style={{ borderCollapse: 'collapse', margin: 'auto', width: '100%', border: '1px solid #ddd'}}>
                 <thead>
-                   <tr>
+                   <tr style={{ border: '1px solid #ddd', backgroundColor: 'black', color: 'white'}}>
                       <th>Name</th>
                       <th>Email</th>
                       <th>Mobile</th>
@@ -29,8 +29,8 @@ const UserList1 = () => {
                 </thead>
                 <tbody>
                     {
-                        users?.map((id, name, email, phone) => (
-                            <tr key={id}>
+                        users.map(({id, name, email, phone}) => (
+                            <tr key={id} style={{ border: '1px solid #ddd', backgroundColor: 'gray', color: 'white'}}>
                                 <td>{name}</td>
                                 <td>{email}</td>
                                 <td>{phone}</td>
