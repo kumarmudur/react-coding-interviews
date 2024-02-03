@@ -16,8 +16,6 @@ const UserList1 = () => {
             .catch(error => console.error(error));
     };
 
-    console.log('users....', users);
-
     return (
         <div style={{ textAlign: 'center'}}>
             <h1>Users Details Table</h1>
@@ -31,11 +29,11 @@ const UserList1 = () => {
                 </thead>
                 <tbody>
                     {
-                        users.map(user => (
-                            <tr key={user.id}>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>{user.phone}</td>
+                        users?.map((id, name, email, phone) => (
+                            <tr key={id}>
+                                <td>{name}</td>
+                                <td>{email}</td>
+                                <td>{phone}</td>
                             </tr>
                         ))
                     }
