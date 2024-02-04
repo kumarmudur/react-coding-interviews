@@ -48,10 +48,10 @@ const ShoppingCart = () => {
             <h2>Available Items</h2>
             <ul>
                 {
-                    items?.map(item => (
-                        <li key={item.id}>
-                            {item.name} - ${item.price}
-                            <button onClick={() => handleAddToCart(item.id)}>Add to Cart</button>
+                    items?.map(({ id, name, price }) => (
+                        <li key={id}>
+                            {name} - ${price}
+                            <button style={{ marginLeft: '12px'}} onClick={() => handleAddToCart(id)}>Add to Cart</button>
                         </li>
                     ))
                 }
@@ -59,12 +59,12 @@ const ShoppingCart = () => {
             <h2>Cart Total</h2>
             <ul>
                 {
-                    cart.map(item => (
-                        <li key={item.id}>
-                            { item.name} - ${item.price} -
+                    cart.map(({ id, name, price, quantity}) => (
+                        <li key={id}>
+                            { name} - ${price} -
                             <select
-                                value={item.quantity || 1}
-                                onChange={(event) => updateQuantity(item.id, parseInt(event.target.value))}
+                                value={quantity || 1}
+                                onChange={(event) => updateQuantity(id, parseInt(event.target.value))}
                             >
                             {
                                 [...Array(5).keys()].map(number => (
@@ -74,7 +74,7 @@ const ShoppingCart = () => {
                                 ))
                             }
                             </select>
-                            <button onClick={() => removeItemFromCart(item.id)}>Remove</button>
+                            <button style={{ marginLeft: '12px'}} onClick={() => removeItemFromCart(id)}>Remove</button>
                         </li>
                     ))
                 }
