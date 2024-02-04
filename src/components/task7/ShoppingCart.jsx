@@ -24,17 +24,13 @@ const ShoppingCart = () => {
     }
 
     const removeItemFromCart = (itemId) => {
-        const updatedCart = cart.filter(item => item.id !== itemId);
-        setCart(updatedCart);
+        setCart(cart.filter(item => item.id !== itemId));
     }
 
     const updateQuantity = (itemId, newQuantity) => {
-        console.log('newQuantity...', newQuantity);
-        console.log('itemId...', itemId);
         if (newQuantity > 5) return;
         const updatedCart = cart.map(item => {
             if (item.id === itemId) {
-                console.log('if condition');
                 return { ...item, quantity: newQuantity }
             }
             return item;
@@ -46,8 +42,6 @@ const ShoppingCart = () => {
         return cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
     } 
 
-    console.log('Shopping Cart', data);
-    console.log('cart...', cart);
     return (
         <div>
             <h1>Shopping Cart</h1>
