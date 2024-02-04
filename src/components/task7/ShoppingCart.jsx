@@ -23,6 +23,11 @@ const ShoppingCart = () => {
         }
     }
 
+    const removeItemFromCart = (itemId) => {
+        const updatedCart = cart.filter(item => item.id !== itemId);
+        setCart(updatedCart);
+    }
+
     const updateQuantity = (itemId, newQuantity) => {
         console.log('newQuantity...', newQuantity);
         console.log('itemId...', itemId);
@@ -71,6 +76,7 @@ const ShoppingCart = () => {
                                 ))
                             }
                             </select>
+                            <button onClick={() => removeItemFromCart(item.id)}>Remove</button>
                         </li>
                     ))
                 }
