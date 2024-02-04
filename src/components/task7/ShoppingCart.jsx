@@ -42,6 +42,10 @@ const ShoppingCart = () => {
         setCart(updatedCart);
     }
 
+    const calculateTotal = () => {
+        return cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
+    } 
+
     console.log('Shopping Cart', data);
     console.log('cart...', cart);
     return (
@@ -81,6 +85,7 @@ const ShoppingCart = () => {
                     ))
                 }
             </ul>
+            <h2>Total: ${calculateTotal()}</h2>
         </div>
     );
 };
