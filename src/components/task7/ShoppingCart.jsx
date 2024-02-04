@@ -23,6 +23,19 @@ const ShoppingCart = () => {
         }
     }
 
+    const updateQuantity = (itemId, newQuantity) => {
+        console.log('newQuantity...', newQuantity);
+        console.log('itemId...', itemId);
+        if (newQuantity > 5) return;
+        const updatedCart = cart.map(item => {
+            if (item.id === itemId) {
+                console.log('if condition');
+                return { ...item, quantity: newQuantity }
+            }
+            return item;
+        });
+        setCart(updatedCart);
+    }
 
     console.log('Shopping Cart', data);
     console.log('cart...', cart);
@@ -48,9 +61,15 @@ const ShoppingCart = () => {
                             { item.name} - ${item.price} -
                             <select
                                 value={item.quantity || 1}
-                                onChange={(event) => updateQuantity(item.itemId, parseInt(event.target.value))}
+                                onChange={(event) => updateQuantity(item.id, parseInt(event.target.value))}
                             >
-
+                            {
+                                [...Array(5).keys()].map(number => (
+                                    <option key={number + 1} value={number + 1}>
+                                        { number + 1}
+                                    </option>
+                                ))
+                            }
                             </select>
                         </li>
                     ))
