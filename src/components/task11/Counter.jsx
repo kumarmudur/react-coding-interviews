@@ -14,7 +14,6 @@ const Counter = () => {
     const [color, setColor] = useState(Colors[0]);
 
     const handleClick = () => {
-        console.log('count..', count);
         if (count === 5) {
             setCount(0);
             setBackground(0);
