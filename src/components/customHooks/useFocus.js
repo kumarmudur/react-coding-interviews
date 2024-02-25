@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 
 export const useFocus = () => {
-    const ref = useRef();
+    const ref = useRef(null);
 
     const focusElement = useCallback(() => {
         if (ref.current) {
@@ -10,7 +10,6 @@ export const useFocus = () => {
     }, []);
 
     return [ref, focusElement];
-
 };
 
 export const App = () => {
