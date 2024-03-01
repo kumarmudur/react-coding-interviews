@@ -12,7 +12,7 @@ export const useFocus = () => {
     return [ref, focusElement];
 };
 
-export const App = () => {
+const App = () => {
     const [inputRef, focusInput] = useFocus();
 
     return (
@@ -25,3 +25,5 @@ export const App = () => {
         </div>
     )
 };
+
+export default App;
