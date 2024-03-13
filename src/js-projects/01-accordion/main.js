@@ -29,7 +29,6 @@ accordionTitles.forEach((currentItem) => {
             getAlreadyAddedActiveClasses.forEach(currentActiveItem => {
                 currentActiveItem.classList.remove('active');
             });
-
             currentItem.classList.add('active');
         }
     })
