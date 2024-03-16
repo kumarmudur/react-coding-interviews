@@ -46,7 +46,7 @@ const App = () => {
         return () => {
             window.removeEventListener('resize', throttledHandleResize);
         }
-    }, []);
+    }, [throttledHandleResize]);
 
     return (
         <div>
