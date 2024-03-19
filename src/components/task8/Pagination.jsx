@@ -18,7 +18,7 @@ const Pagination = () => {
             setData(await response.json());
             // Retrieving total count of items from the API response headers
             const totalCount = response.headers.get('X-Total-Count');
-            setTotalPages(Math.ceil(totalCount /ITEMS_PER_PAGE));
+            setTotalPages(Math.ceil(totalCount / ITEMS_PER_PAGE));
         } catch(error) { console.error("Error fetching data:", error);}
     };
 
