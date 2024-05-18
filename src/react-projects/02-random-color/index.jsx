@@ -4,8 +4,18 @@ const RandomColor = () => {
     const [typeOfColor, setTypeOfColor] = useState('hex');
     const [color, setColor] = useState('#000000');
 
-    const handleCreateRandomHexColor = () => {
+    const randomColorUtility = length => {
+        return Math.floor(Math.random() * length);
+    }
 
+    const handleCreateRandomHexColor = () => {
+        const hex = [1, 2, 3, 4, 5, 6, 'A', 'B', 'C', 'D', 'E', 'F'];
+        let hexColor = '#';
+
+        for (let i = 0; i < 6; i++) {
+            hexColor += hex[randomColorUtility(hex.length)];
+        }
+        setColor(hexColor);
     }
 
     const handleCreateRandomRGBColor = () => {
