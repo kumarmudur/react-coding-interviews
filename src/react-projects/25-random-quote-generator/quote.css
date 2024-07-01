@@ -1,0 +1,27 @@
+
+.random-quote-generator {
+    margin: 20px 0px;
+}
+
+.quote-wrapper {
+    background-color: #000;
+    border-radius: 8px;
+    margin: 30px auto;
+    max-width: 500px;
+    padding: 30px;
+}
+
+.quote-wrapper p {
+    color: #fff;
+    font-size: 18px;
+}
+
+.refresh-btn {
+    border-radius: 8px;
+    background-color: #c5ec03;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+    padding: 12px 20px;
+}
