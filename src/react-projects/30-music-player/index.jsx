@@ -69,12 +69,13 @@ const MusicPlayer = () => {
         <audio ref={audioRef} src={tracks[currentTrack].source} />
         <div className="progress-bar">
           <div 
-          className="progress" 
-          style={{ 
-            width: `${trackProgress}%`, 
-            background: isPlaying ? '#3498db' : '#a43636',
-            height: '15px'
-          }}>
+            className="progress" 
+            style={{ 
+              width: `${trackProgress}%`, 
+              background: isPlaying ? '#3498db' : '#a43636',
+              height: '15px'
+            }}
+          >
           </div>
         </div>
         <div className="track-controls">
